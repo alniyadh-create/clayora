@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title & Description -->
+  <title>Clayora Ceramics | Handcrafted Artisan Pottery from Kerala</title>
+  <meta name="description" content="Clayora offers handcrafted ceramic jars, spice boxes, chai sets, and artisan dinnerware. Made in Kerala, delivered to your home. Free delivery & easy returns." />
+  <meta name="keywords" content="ceramics, handcrafted pottery, artisan ceramics, spice box, chai set, jars, dinnerware, Kerala ceramics" />
+  <meta name="author" content="Clayora Ceramics" />
+
+  <!-- ✅ Clayora Favicon Pack -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Social Media (Open Graph) -->
+  <meta property="og:title" content="Clayora Ceramics | Handcrafted Artisan Pottery" />
+  <meta property="og:description" content="Discover Clayora's artisan ceramics – spice boxes, dinnerware, chai sets & more." />
+  <meta property="og:image" content="https://clayoraceramics.com/images/ceramic-spice-box.jpg" />
+  <meta property="og:url" content="https://clayoraceramics.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clayora Ceramics | Handcrafted Artisan Pottery" />
+  <meta name="twitter:description" content="Discover Clayora's artisan ceramics – spice boxes, dinnerware, chai sets & more." />
+  <meta name="twitter:image" content="https://clayoraceramics.com/images/ceramic-spice-box.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Inline CSS for Our Story (Majestic Green + golden text) -->
+  <style>
+    /* Our Story theme */
+    .our-story {
+      background: #2e473b; /* majestic green */
+      color: #f7ecd0;      /* soft gold/cream text */
+      padding: 3rem 1.2rem;
+    }
+    .our-story h2 {
+      color: #fff6e6;
+      text-align: center;
+      margin: 0 0 1.2rem 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+    .our-story .story-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .our-story .story-text {
+      flex: 1 1 420px;
+      color: #f6edd7;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .our-story .story-text p {
+      margin-bottom: 1rem;
+    }
+    .our-story .story-image {
+      flex: 1 1 380px;
+      text-align: center;
+    }
+    .our-story .story-image img {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    /* Button/link tweaks when inside green section (optional) */
+    .our-story a { color: #f9e9c2; text-decoration: underline; }
+    .our-story .story-text strong { color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 820px) {
+      .our-story { padding: 2rem 1rem; }
+      .our-story .story-content { flex-direction: column-reverse; gap: 1.2rem; }
+      .our-story .story-image img { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top promo -->
+  <div class="promo">Free delivery • Easy returns</div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <nav class="left-nav">
+        <a href="#about">About</a>
+        <a href="/products">Products</a>
+        <a href="#our-story">Our Story</a>
+      </nav>
+      <a class="logo" href="/">CLAYORA</a>
+      <div class="right-icons">
+        <a class="icon-btn" href="https://instagram.com" target="_blank">IG</a>
+        <a class="icon-btn" href="https://facebook.com" target="_blank">FB</a>
+        <button id="cartBtn" class="icon-btn">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Handcrafted Ceramics for Daily Joy</h1>
+    <p>Seasonal artisan collection — small batches from Trivandrum</p>
+    <a class="btn btn-primary" href="/products">Shop Collection</a>
+  </section>
+
+  <!-- Hot Sellers -->
+  <section class="section">
+    <h2>Hot Sellers</h2>
+    <div class="grid">
+
+      <article class="card">
+        <div class="media">
+          <img src="./images/ceramic-spice-box.jpg" alt="Ceramic Spice Box">
+        </div>
+        <div class="card-title">Ceramic Spice Box</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="./images/kulhad-tea-set.jpg" alt="Kulhad Tea Set">
+        </div>
+        <div class="card-title">Kulhad Cutting Chai</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="./images/hand-painted-jars.jpg" alt="Hand Painted Jars">
+        </div>
+        <div class="card-title">Hand Painted Jars</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="./images/maggi-bowl.jpg" alt="Maggi Bowl">
+        </div>
+        <div class="card-title">Maggi Bowl</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="./images/oil-dispenser.jpg" alt="Oil Dispenser">
+        </div>
+        <div class="card-title">Oil Dispenser</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <img src="./images/salt-pepper.jpg" alt="Salt and Pepper">
+        </div>
+        <div class="card-title">Salt &amp; Pepper</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="about-container">
+      <h2>About Us</h2>
+      <p class="about-lead">
+        Clayora is Trivandrum’s first-of-its-kind ceramics studio, blending the soul of traditional Indian
+        craftsmanship with the elegance of modern minimalist design.
+      </p>
+      <p>
+        From ceramic kitchenware to home décor, each piece is thoughtfully handcrafted, fired for lasting
+        strength, and created to bring both beauty and functionality into everyday life.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section our-story" id="our-story">
+    <h2>Our Story</h2>
+    <div class="story-content">
+      <div class="story-text">
+        <p>
+          Clayora, a local brand from Trivandrum, Kerala, was born out of a deep love and passion for ceramics — 
+          blending the soul of traditional Indian craftsmanship with the elegance of modern, minimalist design.
+        </p>
+        <p>
+          Our journey began in 2021, when, as a couple, we were setting up our dream home in Trivandrum. Alfa, co-founder of Clayora, realized that aesthetically designed kitchenware like plates, bowls, and jars was missing from the market. She shared this concern with Niyadh, the other co-founder of Clayora.
+        </p>
+        <p>
+          By a twist of fate, one of Niyadh’s close friends — a fellow MBA student from Cardiff, London — came from a Jaipur family renowned for their heritage craft of blue pottery. The family was going through a financial crisis, and the couple extended their support, acquiring major shares in the business. This partnership opened the doors to unique, handcrafted ceramics that carried generations of artistry.
+        </p>
+        <p>
+          Today, every piece we make — whether a mug, a planter, or a decorative jar — is crafted with care, fired multiple times for strength, and finished to perfection. From our base in Trivandrum, we distribute across India, bringing timeless ceramic artistry to homes, boutiques, and wholesalers alike.
+        </p>
+        <p>
+          At Clayora, we believe that ceramics should feel alive — carrying the warmth of the hands that shaped them. Our goal is simple: to bring aesthetic and functional art into everyday life. From sipping your morning coffee to gifting something meaningful, we want Clayora pieces to be part of your stories and memories.
+        </p>
+      </div>
+
+      <div class="story-image">
+        <img src="./images/our-story.jpg" alt="Clayora artisans at work">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="brand-col">
+        <h3>CLAYORA</h3>
+        <p>Handcrafted ceramics — ethically made in Kerala.</p>
+      </div>
+      <div class="links-col">
+        <ul>
+          <li><a href="/hot-sellers">Hot Sellers</a></li>
+          <li><a href="/sustainability">Sustainability</a></li>
+          <li><a href="/gift-sets">Gift Sets</a></li>
+        </ul>
+        <ul>
+          <li><a href="/faqs">FAQs</a></li>
+          <li><a href="/shipping">Shipping & Returns</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="contact-col">
+        <p><strong>Connect with us</strong></p>
+        <p>💬 <a href="https://chat.whatsapp.com/FMktOEuWula5mZHxyduYx5?mode=ems_copy_t" target="_blank">Chat on WhatsApp</a></p>
+        <p>☎️ <a href="tel:+918129710294">+91 81297 10294</a></p>
+        <p>☎️ <a href="tel:+918547260400">+91 85472 60400</a></p>
+        <p>✉️ <a href="mailto:hello@clayora.com">hello@clayora.com</a></p>
+        <div class="social">
+          <a href="https://www.instagram.com/clayoratheceramicstudio?igsh=MTY3Nmdka2dqdDFleg%3D%3D&utm_source=qr" target="_blank">Instagram</a> |
+          <a href="https://www.facebook.com/share/17Ki9CzfDA/?mibextid=wwXIfr" target="_blank">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Clayora. All rights reserved.</div>
+  </footer>
+
+  <!-- Bottom nav (mobile) -->
+  <nav class="bottom-nav">
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="#our-story">Our Story</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
