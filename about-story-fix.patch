@@ -1,0 +1,11 @@
+diff --git a/index.html b/index.html
+index e69de29..a3f5b12 100644
+--- a/index.html
++++ b/index.html
+@@ -120,7 +120,7 @@
+-        <a href="/about">About</a>
+-        <a href="/products">Products</a>
+-        <a href="#our-story">Our Story</a>
++        <a href="#our-story">About</a>
++        <a href="/products">Products</a>
++        <a href="#our-story">Our Story</a>

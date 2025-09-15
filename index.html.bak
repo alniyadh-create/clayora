@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title & Description -->
+  <title>Clayora Ceramics | Handcrafted Artisan Pottery from Kerala</title>
+  <meta name="description" content="Clayora offers handcrafted ceramic jars, spice boxes, chai sets, and artisan dinnerware. Made in Kerala, delivered to your home. Free delivery & easy returns." />
+  <meta name="keywords" content="ceramics, handcrafted pottery, artisan ceramics, spice box, chai set, jars, dinnerware, Kerala ceramics" />
+  <meta name="author" content="Clayora Ceramics" />
+
+  <!-- Clayora Favicon Pack -->
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Social Media (Open Graph) -->
+  <meta property="og:title" content="Clayora Ceramics | Handcrafted Artisan Pottery" />
+  <meta property="og:description" content="Discover Clayora's artisan ceramics – spice boxes, dinnerware, chai sets & more." />
+  <meta property="og:image" content="https://clayoraceramics.com/images/ceramic-spice-box.jpg" />
+  <meta property="og:url" content="https://clayoraceramics.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clayora Ceramics | Handcrafted Artisan Pottery" />
+  <meta name="twitter:description" content="Discover Clayora's artisan ceramics – spice boxes, dinnerware, chai sets & more." />
+  <meta name="twitter:image" content="https://clayoraceramics.com/images/ceramic-spice-box.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Inline CSS for Our Story + small layout fixes -->
+  <style>
+    :root{--green:#2e473b;--cream:#f6edd7;--accent:#f9e9c2}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;color:#222;background:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    .promo{background:#111;color:#fff;text-align:center;padding:.45rem;font-weight:600;font-size:.95rem}
+    header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:40}
+    .header-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1rem}
+    .header-inner a{color:#222;text-decoration:none;margin:0 .6rem;font-weight:600}
+    .logo{font-family:'Playfair Display',serif;font-size:1.2rem;letter-spacing:1px}
+    .left-nav a{color:#444}
+    .right-icons .icon-btn{margin-left:.6rem}
+    .hero{padding:3rem 1rem;text-align:center;background:#faf8f6}
+    .hero h1{font-family:'Playfair Display',serif;margin:0 0 .5rem;font-size:2rem}
+    .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;text-decoration:none}
+    .btn-primary{background:#222;color:#fff}
+
+    .section{max-width:1200px;margin:2rem auto;padding:0 1rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .card{background:#fff;border:1px solid #eee;border-radius:8px;padding:0.6rem;text-align:center}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:6px;display:block}
+
+    /* Our Story theme */
+    .our-story {
+      background: var(--green);
+      color: var(--cream);
+      padding: 3rem 1.2rem;
+    }
+    .our-story h2 {
+      color: #fff6e6;
+      text-align: center;
+      margin: 0 0 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+    }
+    .our-story .story-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .our-story .story-text {
+      flex: 1 1 420px;
+      color: var(--cream);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .our-story .story-text p { margin-bottom: 1rem; }
+    .our-story .story-image {
+      flex: 1 1 380px;
+      text-align: center;
+    }
+    .our-story .story-image img {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    footer{background:#111;color:#f2f2f2;padding:2rem 1rem}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;gap:2rem;flex-wrap:wrap}
+    .footer-inner > div{flex:1 1 200px}
+    .footer-bottom{max-width:1200px;margin:1rem auto 0;color:#bbb;text-align:center;padding-bottom:1rem}
+
+    /* Mobile-friendly touch targets and header spacing */
+    a, button { min-height: 44px; min-width: 44px; touch-action: manipulation; }
+    body { padding-top: 0; } /* header is sticky, not fixed; if you change to fixed set padding-top to header height */
+
+    /* Responsive images */
+    img { max-width: 100%; height: auto; display: block; }
+
+    @media (max-width:820px){
+      .our-story {padding:2rem 1rem}
+      .our-story .story-content {flex-direction:column-reverse;gap:1.2rem}
+      .our-story .story-image img {max-width:100%}
+      .header-inner{padding:.6rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top promo -->
+  <div class="promo">Free delivery • Easy returns</div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <nav class="left-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#our-story">Our Story</a>
+      </nav>
+
+      <a class="logo" href="/">CLAYORA</a>
+
+      <div class="right-icons">
+        <a class="icon-btn" href="https://www.instagram.com/clayoratheceramicstudio?igsh=MTY3Nmdka2dqdDFleg%3D%3D&utm_source=qr" target="_blank" rel="noopener">IG</a>
+        <a class="icon-btn" href="https://www.facebook.com/share/17Ki9CzfDA/?mibextid=wwXIfr" target="_blank" rel="noopener">FB</a>
+        <button id="cartBtn" class="icon-btn">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h1>Handcrafted Ceramics for Daily Joy</h1>
+    <p>Seasonal artisan collection — small batches from Trivandrum</p>
+    <a class="btn btn-primary" href="#products">Shop Collection</a>
+  </section>
+
+  <!-- About (in-page so About link won't 404) -->
+  <section id="about" class="section">
+    <h2>About Clayora</h2>
+    <p>
+      Clayora is a Trivandrum-based ceramics studio bringing together traditional Indian craftsmanship and modern minimalist design. From ceramic kitchenware to home décor, every piece is handcrafted with care, fired for strength, and designed to add beauty and function to everyday life.
+    </p>
+  </section>
+
+  <!-- Hot Sellers / Products -->
+  <section id="products" class="section">
+    <h2>Hot Sellers</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="media">
+          <!-- Replace the src / srcset files with actual resized images at /images/ -->
+          <picture>
+            <source type="image/webp"
+              srcset="/images/ceramic-spice-box-320.webp 320w, /images/ceramic-spice-box-640.webp 640w, /images/ceramic-spice-box-1024.webp 1024w"
+              sizes="(max-width:600px) 92vw, 400px">
+            <img src="/images/ceramic-spice-box-640.jpg"
+                 srcset="/images/ceramic-spice-box-320.jpg 320w, /images/ceramic-spice-box-640.jpg 640w, /images/ceramic-spice-box-1024.jpg 1024w"
+                 sizes="(max-width:600px) 92vw, 400px"
+                 alt="Ceramic Spice Box"
+                 loading="lazy">
+          </picture>
+        </div>
+        <div class="card-title">Ceramic Spice Box</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <picture>
+            <source type="image/webp"
+              srcset="/images/kulhad-tea-set-320.webp 320w, /images/kulhad-tea-set-640.webp 640w, /images/kulhad-tea-set-1024.webp 1024w"
+              sizes="(max-width:600px) 92vw, 400px">
+            <img src="/images/kulhad-tea-set-640.jpg"
+                 srcset="/images/kulhad-tea-set-320.jpg 320w, /images/kulhad-tea-set-640.jpg 640w, /images/kulhad-tea-set-1024.jpg 1024w"
+                 sizes="(max-width:600px) 92vw, 400px"
+                 alt="Kulhad Tea Set"
+                 loading="lazy">
+          </picture>
+        </div>
+        <div class="card-title">Kulhad Cutting Chai</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <picture>
+            <source type="image/webp"
+              srcset="/images/hand-painted-jars-320.webp 320w, /images/hand-painted-jars-640.webp 640w, /images/hand-painted-jars-1024.webp 1024w"
+              sizes="(max-width:600px) 92vw, 400px">
+            <img src="/images/hand-painted-jars-640.jpg"
+                 srcset="/images/hand-painted-jars-320.jpg 320w, /images/hand-painted-jars-640.jpg 640w, /images/hand-painted-jars-1024.jpg 1024w"
+                 sizes="(max-width:600px) 92vw, 400px"
+                 alt="Hand Painted Jars"
+                 loading="lazy">
+          </picture>
+        </div>
+        <div class="card-title">Hand Painted Jars</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <picture>
+            <source type="image/webp"
+              srcset="/images/maggi-bowl-320.webp 320w, /images/maggi-bowl-640.webp 640w, /images/maggi-bowl-1024.webp 1024w"
+              sizes="(max-width:600px) 92vw, 400px">
+            <img src="/images/maggi-bowl-640.jpg"
+                 srcset="/images/maggi-bowl-320.jpg 320w, /images/maggi-bowl-640.jpg 640w, /images/maggi-bowl-1024.jpg 1024w"
+                 sizes="(max-width:600px) 92vw, 400px"
+                 alt="Maggi Bowl"
+                 loading="lazy">
+          </picture>
+        </div>
+        <div class="card-title">Maggi Bowl</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <picture>
+            <source type="image/webp"
+              srcset="/images/oil-dispenser-320.webp 320w, /images/oil-dispenser-640.webp 640w, /images/oil-dispenser-1024.webp 1024w"
+              sizes="(max-width:600px) 92vw, 400px">
+            <img src="/images/oil-dispenser-640.jpg"
+                 srcset="/images/oil-dispenser-320.jpg 320w, /images/oil-dispenser-640.jpg 640w, /images/oil-dispenser-1024.jpg 1024w"
+                 sizes="(max-width:600px) 92vw, 400px"
+                 alt="Oil Dispenser"
+                 loading="lazy">
+          </picture>
+        </div>
+        <div class="card-title">Oil Dispenser</div>
+      </article>
+
+      <article class="card">
+        <div class="media">
+          <picture>
+            <source type="image/webp"
+              srcset="/images/salt-pepper-320.webp 320w, /images/salt-pepper-640.webp 640w, /images/salt-pepper-1024.webp 1024w"
+              sizes="(max-width:600px) 92vw, 400px">
+            <img src="/images/salt-pepper-640.jpg"
+                 srcset="/images/salt-pepper-320.jpg 320w, /images/salt-pepper-640.jpg 640w, /images/salt-pepper-1024.jpg 1024w"
+                 sizes="(max-width:600px) 92vw, 400px"
+                 alt="Salt and Pepper"
+                 loading="lazy">
+          </picture>
+        </div>
+        <div class="card-title">Salt &amp; Pepper</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Our Story (inserted) -->
+  <section class="section our-story" id="our-story" aria-labelledby="ourStoryTitle">
+    <h2 id="ourStoryTitle">Our Story</h2>
+    <div class="story-content">
+      <div class="story-text">
+        <p>
+          Clayora, a local brand from Trivandrum, Kerala, was born out of a deep love and passion for ceramics — blending the soul of traditional Indian craftsmanship with the elegance of modern, minimalist design.
+        </p>
+        <p>
+          Our journey began in 2021, when, as a couple, we were setting up our dream home in Trivandrum. Alfa, co-founder of Clayora, realized that aesthetically designed kitchenware like plates, bowls, and jars were missing from the market. She shared this concern with Niyadh, the other co-founder.
+        </p>
+        <p>
+          By a twist of fate, one of Niyadh’s close friends — from a Jaipur family renowned for blue pottery — needed support. A partnership followed, bringing traditional blue-pottery know-how together with our design sensibility. Today we craft unique, handcrafted ceramics that carry generations of artistry.
+        </p>
+        <p>
+          Each piece — whether a mug, planter, or decorative jar — is crafted with care, fired multiple times for strength, and finished to perfection. From our base in Trivandrum, we distribute across India to homes, boutiques, and wholesalers alike.
+        </p>
+        <p>
+          At Clayora, ceramics should feel alive — carrying the warmth of the hands that shaped them. Our goal is simple: bring aesthetic and functional art into everyday life. We hope Clayora pieces become part of your stories and memories.
+        </p>
+      </div>
+
+      <div class="story-image" aria-hidden="false">
+        <!-- Ensure ./images/our-story.jpg and resized variants exist -->
+        <img src="./images/our-story.jpg" alt="Clayora artisans at work" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="brand-col">
+        <h3 style="margin:0 0 .5rem 0;">CLAYORA</h3>
+        <p style="margin:0">Handcrafted ceramics — ethically made in Kerala.</p>
+      </div>
+
+      <div class="links-col">
+        <ul style="list-style:none;padding:0;margin:0 1rem 0 0;line-height:1.8">
+          <li><a href="#products" style="color:var(--cream)">Hot Sellers</a></li>
+          <li><a href="#our-story" style="color:var(--cream)">Our Story</a></li>
+          <li><a href="/gift-sets" style="color:var(--cream)">Gift Sets</a></li>
+        </ul>
+
+        <ul style="list-style:none;padding:0;margin:0;line-height:1.8">
+          <li><a href="/faqs" style="color:var(--cream)">FAQs</a></li>
+          <li><a href="/shipping" style="color:var(--cream)">Shipping & Returns</a></li>
+          <li><a href="/contact" style="color:var(--cream)">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="contact-col">
+        <p><strong>Connect with us</strong></p>
+
+        <!-- WhatsApp (direct chat) -->
+        <p>💬 <a href="https://wa.me/918129710294" target="_blank" rel="noopener" style="color:var(--cream)">Chat on WhatsApp</a></p>
+
+        <!-- Phone 1 -->
+        <p>☎️ <a href="tel:+918129710294" style="color:var(--cream)">+91 81297 10294</a></p>
+        <!-- Phone 2 -->
+        <p>☎️ <a href="tel:+918547260400" style="color:var(--cream)">+91 85472 60400</a></p>
+
+        <!-- Email -->
+        <p>✉️ <a href="mailto:hello@clayora.com" style="color:var(--cream)">hello@clayora.com</a></p>
+
+        <!-- Social links -->
+        <div class="social" style="margin-top:.6rem">
+          <a href="https://www.instagram.com/clayoratheceramicstudio?igsh=MTY3Nmdka2dqdDFleg%3D%3D&utm_source=qr" target="_blank" rel="noopener" style="color:var(--cream)">Instagram</a>
+          <span style="color:var(--cream)"> | </span>
+          <a href="https://www.facebook.com/share/17Ki9CzfDA/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:var(--cream)">Facebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© <span id="year"></span> Clayora. All rights reserved.</div>
+  </footer>
+
+  <!-- Bottom nav (mobile) -->
+  <nav class="bottom-nav" style="display:none">
+    <a href="/">Home</a>
+    <a href="/products">Products</a>
+    <a href="#our-story">Our Story</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small helper: smooth scroll for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href === '#' || !href) return;
+        const el = document.querySelector(href);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
