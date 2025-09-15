@@ -4,10 +4,13 @@
   <meta charset="utf-8" />
   <title>Clayora — Checkout</title>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
+      max-width: 900px;
+      margin: auto;
     }
     .btn {
       background: #d4af37;
@@ -17,30 +20,39 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .btn:hover {
-      background: #b28f2b;
-    }
+    .btn:hover { background: #b28f2b; }
+    .product { margin: 8px 0; display:flex; justify-content:space-between; align-items:center; }
   </style>
 </head>
 <body>
   <h1>Cart — Clayora</h1>
+
   <div id="cart">
-    <div>Hand-painted Mug — ₹499 <button onclick="addToCart(499)">Add</button></div>
-    <div>Tea Set — ₹1299 <button onclick="addToCart(1299)">Add</button></div>
+    <div class="product">
+      <div>Hand-painted Mug — ₹499</div>
+      <button class="btn" onclick="addToCart(499)">Add</button>
+    </div>
+    <div class="product">
+      <div>Tea Set — ₹1299</div>
+      <button class="btn" onclick="addToCart(1299)">Add</button>
+    </div>
   </div>
 
   <hr>
   <h3>Your Cart</h3>
   <div id="cartList">No items yet</div>
   <br>
-  <button class="btn" onclick="checkout()">Pay Now</button>
+  <button class="btn" id="payBtn" onclick="checkout()">Pay Now</button>
 
   <script>
+    // Simple in-memory cart
     const cart = [];
+
     function addToCart(price) {
       cart.push({ price });
       renderCart();
     }
+
     function renderCart() {
       const el = document.getElementById("cartList");
       if (!cart.length) { el.innerHTML = "No items yet"; return; }
@@ -52,44 +64,94 @@
       el.innerHTML = rows + `<br><strong>Total: ₹${total}</strong>`;
     }
 
+    // Improved checkout with error handling & status disabling
     async function checkout() {
       if (!cart.length) { alert("Cart empty"); return; }
-      const total = cart.reduce((s, i) => s + i.price, 0);
 
-      // call serverless function
-      const res = await fetch("/.netlify/functions/createOrder", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: total, currency: "INR" })
-      });
+      const payBtn = document.getElementById("payBtn");
+      payBtn.disabled = true;
+      payBtn.textContent = "Please wait...";
 
-      const data = await res.json();
-      const order = data.order;
+      try {
+        const total = cart.reduce((s, i) => s + i.price, 0); // rupees
 
-      const options = {
-        key: data.key_id,
-        amount: order.amount,
-        currency: order.currency,
-        name: "Clayora",
-        description: "Clayora Ceramics",
-        order_id: order.id,
-        handler: async function (response) {
-          const verifyRes = await fetch("/.netlify/functions/verifyPayment", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(response)
-          });
-          const verifyJson = await verifyRes.json();
-          if (verifyJson.ok) {
-            alert("Payment successful! Thank you 🎉");
-          } else {
-            alert("Payment verification failed ❌");
-          }
+        // 1) Create order on server (server will convert to paise)
+        const res = await fetch("/.netlify/functions/createOrder", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount: total, currency: "INR" })
+        });
+
+        const raw = await res.text();
+        let data;
+        try { data = JSON.parse(raw); } catch(e) {
+          throw new Error("Server error: " + raw);
         }
-      };
 
-      const rzp = new Razorpay(options);
-      rzp.open();
+        if (!res.ok) {
+          throw new Error(data.error || JSON.stringify(data));
+        }
+
+        // Expecting { order, key_id }
+        const order = data.order;
+        const keyId = data.key_id;
+
+        if (!order || !order.id) throw new Error("Invalid order returned from server");
+
+        // 2) Open Razorpay checkout
+        const options = {
+          key: keyId || "rzp_test_XXXXXXXXXXXXXXXX", // prefer server-provided key_id
+          amount: order.amount,      // in paise, returned by server
+          currency: order.currency,
+          name: "Clayora",
+          description: "Clayora Ceramics purchase",
+          order_id: order.id,
+          handler: async function (response) {
+            // 3) Verify payment server-side
+            try {
+              const verifyRes = await fetch("/.netlify/functions/verifyPayment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(response)
+              });
+              const verifyJson = await verifyRes.json().catch(()=>({}));
+
+              if (verifyRes.ok && (verifyJson.status === "success" || verifyJson.ok)) {
+                alert("✅ Payment successful and verified! Thank you.");
+                // Optional: redirect to thank-you page:
+                // window.location.href = "/thank-you.html";
+              } else {
+                console.error("verifyPayment failed:", verifyJson);
+                alert("❌ Payment verification failed. Please contact support.");
+              }
+            } catch (err) {
+              console.error("verifyPayment error:", err);
+              alert("❌ Error verifying payment. Please contact support.");
+            }
+          },
+          modal: {
+            ondismiss: function() {
+              // Re-enable button when modal is closed without payment
+              payBtn.disabled = false;
+              payBtn.textContent = "Pay Now";
+            }
+          },
+          prefill: {
+            name: "",
+            email: ""
+          },
+          theme: { color: "#d4af37" }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+
+      } catch (err) {
+        console.error("Checkout error:", err);
+        alert("Error: " + (err.message || err));
+        document.getElementById("payBtn").disabled = false;
+        document.getElementById("payBtn").textContent = "Pay Now";
+      }
     }
   </script>
 </body>
