@@ -1,5 +1,5 @@
 /* =========================
-   Clayora — Final stylesheet
+   Clayora — Final stylesheet (updated)
    Replace your styles.css with this file
    ========================= */
 
@@ -9,7 +9,7 @@
 :root {
   --majestic-green: #2e473b;
   --cream: #fdfbf7;
-  --tan: #d2b48c;
+  --tan: #d2b48c; /* used as golden/tan border color */
   --white: #ffffff;
   --black: #000000;
   --gray: #666;
@@ -51,6 +51,11 @@ body {
   font-size: 0.85rem;
   text-align: center;
   padding: 0.4rem var(--gutter);
+
+  /* golden border on majestic blocks */
+  border: 2px solid var(--tan);
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
 /* --------------------
@@ -97,15 +102,27 @@ body.header-fixed { padding-top: var(--header-height); }
   font-size: 0.95rem;
 }
 
+/* --- Logo changes: larger and more prominent --- */
 .logo {
   font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 1.45rem; /* slightly smaller to fit header */
+  font-weight: 800;
+  font-size: 1.9rem; /* increased for more emphasis */
   color: var(--majestic-green);
   text-decoration: none;
   line-height: 1;
+  letter-spacing: 0.6px;
+  padding: 2px 6px;
+  border-radius: 6px;
 }
 
+/* subtle gold outline option for logo area when placed over green blocks
+   (not applied by default — keeps compatibility), you can add .logo--gold to HTML if desired */
+.logo--gold {
+  border: 2px solid var(--tan);
+  background: rgba(242, 236, 218, 0.02);
+}
+
+/* right icons */
 .right-icons {
   display: flex;
   gap: 1rem;
@@ -134,9 +151,10 @@ body.header-fixed { padding-top: var(--header-height); }
   gap: 0.8rem;
 }
 
+/* Slightly reduced hero heading so logo becomes more dominant */
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem); /* reduced a touch from previous */
   margin-bottom: 0.4rem;
   color: var(--majestic-green);
 }
@@ -260,12 +278,18 @@ body.header-fixed { padding-top: var(--header-height); }
 
 /* --------------------
    Footer
+   (also given the golden border treatment)
 -------------------- */
 footer {
   background: var(--majestic-green);
   color: var(--cream);
   padding: 2rem var(--gutter);
   margin-top: 3rem;
+
+  /* golden border */
+  border: 2px solid var(--tan);
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .footer-inner {
@@ -294,6 +318,13 @@ footer {
   font-size: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 2rem;
+}
+
+/* also apply golden border for the our-story section (keeps original green background) */
+.our-story {
+  border: 2px solid var(--tan);
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 /* --------------------
@@ -358,9 +389,12 @@ a, button { min-height: 44px; min-width: 44px; touch-action: manipulation; -webk
   .hero h1 { font-size: 1.4rem; }
   .hero p { font-size: 0.95rem; }
   .card .media { height: auto; aspect-ratio: 4/3; }
-  .logo { font-size: 1.2rem; }
+  .logo { font-size: 1.35rem; } /* slightly scale down logo on tiny screens */
 }
 
 /* --------------------
    End of stylesheet
 -------------------- */
+.our-story .story-text p {
+  margin-bottom: 1.6rem;
+}

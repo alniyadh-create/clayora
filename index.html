@@ -4,32 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Title & Description -->
   <title>Clayora Ceramics | Handcrafted Artisan Pottery from Kerala</title>
   <meta name="description" content="Clayora offers handcrafted ceramic jars, spice boxes, chai sets, and artisan dinnerware. Made in Kerala, delivered to your home. Free delivery & easy returns." />
   <meta name="keywords" content="ceramics, handcrafted pottery, artisan ceramics, spice box, chai set, jars, dinnerware, Kerala ceramics" />
   <meta name="author" content="Clayora Ceramics" />
 
-  <!-- ✅ Clayora Favicon Pack -->
+  <!-- ✅ Favicon -->
   <link rel="icon" href="images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-
-  <!-- Social Media (Open Graph) -->
-  <meta property="og:title" content="Clayora Ceramics | Handcrafted Artisan Pottery" />
-  <meta property="og:description" content="Discover Clayora's artisan ceramics – spice boxes, dinnerware, chai sets & more." />
-  <meta property="og:image" content="https://clayoraceramics.com/images/ceramic-spice-box.jpg" />
-  <meta property="og:url" content="https://clayoraceramics.com" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Clayora Ceramics | Handcrafted Artisan Pottery" />
-  <meta name="twitter:description" content="Discover Clayora's artisan ceramics – spice boxes, dinnerware, chai sets & more." />
-  <meta name="twitter:image" content="https://clayoraceramics.com/images/ceramic-spice-box.jpg" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -37,18 +19,35 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Inline CSS for Our Story (Majestic Green + golden text) + dropdown additions -->
   <style>
-    /* Our Story theme (left intact from your file) */
+    /* Make CLAYORA logo bigger */
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; /* bigger than before */
+      font-weight: 700;
+      color: #2e473b;
+      text-decoration: none;
+    }
+
+    /* Hero headline slightly reduced */
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; /* smaller so logo is more dominant */
+      margin: 0 0 .5rem;
+    }
+
+    /* Our Story theme with golden border */
     .our-story {
-      background: #2e473b; /* majestic green */
-      color: #f7ecd0;      /* soft gold/cream text */
+      background: #2e473b;
+      color: #f7ecd0;
       padding: 3rem 1.2rem;
+      border: 3px solid #d4af37; /* golden border */
+      border-radius: 12px;
     }
     .our-story h2 {
       color: #fff6e6;
       text-align: center;
-      margin: 0 0 1.2rem 0;
+      margin: 0 0 1.2rem;
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
     }
@@ -61,229 +60,30 @@
       justify-content: center;
       flex-wrap: wrap;
     }
-    .our-story .story-text {
-      flex: 1 1 420px;
-      color: #f6edd7;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-    .our-story .story-text p {
-      margin-bottom: 1rem;
-    }
-    .our-story .story-image {
-      flex: 1 1 380px;
-      text-align: center;
-    }
+    .our-story .story-text { flex: 1 1 420px; line-height: 1.7; }
+    .our-story .story-image { flex: 1 1 380px; text-align: center; }
     .our-story .story-image img {
-      width: 100%;
-      max-width: 440px;
+      width: 100%; max-width: 440px;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      display: block;
-      margin: 0 auto;
-      object-fit: cover;
+      display: block; margin: 0 auto; object-fit: cover;
     }
-
-    /* Button/link tweaks when inside green section (optional) */
-    .our-story a { color: #f9e9c2; text-decoration: underline; }
-    .our-story .story-text strong { color: #fff; }
-
-    /* Responsive */
-    @media (max-width: 820px) {
-      .our-story { padding: 2rem 1rem; }
-      .our-story .story-content { flex-direction: column-reverse; gap: 1.2rem; }
-      .our-story .story-image img { max-width: 100%; }
-    }
-
-    /* ---------- Dropdown styles (added) ---------- */
-    /* Keep these minimal so your styles.css remains primary */
-    .nav-dropdown { position: relative; display: inline-block; }
-    .dropbtn {
-      background: transparent;
-      border: none;
-      padding: 8px 10px;
-      cursor: pointer;
-      font-weight: 600;
-      color: inherit;
-      font-size: 0.95rem;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      min-width: 260px;
-      background: #fff;
-      border: 1px solid #eee;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-      border-radius: 8px;
-      padding: 8px;
-      display: none;
-      z-index: 10002;
-    }
-    .nav-dropdown[aria-expanded="true"] .dropdown-menu { display: block; }
-
-    .group-item { margin-bottom: 6px; }
-    .group-btn {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: transparent;
-      border: none;
-      padding: 8px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 700;
-      color: #2e473b;
-      font-size: 0.95rem;
-    }
-    .group-btn:hover { background: rgba(46,71,59,0.06); }
-    .sub-menu { display: none; margin-top: 6px; padding-left: 8px; }
-    .sub-menu a {
-      display:block;
-      padding:6px 8px;
-      text-decoration:none;
-      color:#222;
-      border-radius:6px;
-      font-size:0.92rem;
-    }
-    .sub-menu a:hover { background: rgba(46,71,59,0.04); }
-    .group-item[aria-expanded="true"] > .sub-menu { display: block; }
-
-    /* small tweak for mobiles */
-    @media (max-width:520px){
-      .dropdown-menu { min-width: 200px; left: auto; right: 0; }
-    }
-    /* ---------- end dropdown styles ---------- */
   </style>
 </head>
 <body>
-
-  <!-- Top promo -->
-  <div class="promo">Free delivery • Easy returns</div>
 
   <!-- Header -->
   <header>
     <div class="header-inner">
       <nav class="left-nav">
         <a href="/about">About</a>
-
-        <!-- Products Dropdown (main headings only; click to reveal sub-items) -->
-        <div class="nav-dropdown" id="productsDropdown" aria-haspopup="true" aria-expanded="false">
-          <button id="productsToggle" class="dropbtn" aria-expanded="false">Products ▾</button>
-
-          <div id="productsMenu" class="dropdown-menu" role="menu" aria-label="Products">
-            <!-- JARS -->
-            <div class="group-item" data-group="jars" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Jars ▸</button>
-              <div id="submenu-jars" class="sub-menu" role="menu">
-                <a href="#products" data-group="jars" data-sub="hand-painted">Hand Painted Jar</a>
-                <a href="#products" data-group="jars" data-sub="matte">Matte Finished Jar</a>
-                <a href="#products" data-group="jars" data-sub="tea-400">Tea / Coffee / Sugar Set 400 ml</a>
-                <a href="#products" data-group="jars" data-sub="tea-250">Tea / Coffee / Sugar Set 250 ml</a>
-              </div>
-            </div>
-
-            <!-- PLATES -->
-            <div class="group-item" data-group="plates" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Plates ▸</button>
-              <div id="submenu-plates" class="sub-menu" role="menu">
-                <a href="#products" data-group="plates" data-sub="dinner-10">Dinner Plate 10"</a>
-                <a href="#products" data-group="plates" data-sub="salad-12">Salad Plate 12"</a>
-                <a href="#products" data-group="plates" data-sub="quarter-7">Quarter Plate 7"</a>
-                <a href="#products" data-group="plates" data-sub="quarter-8">Quarter Plate 8"</a>
-                <a href="#products" data-group="plates" data-sub="pasta-10">Pasta Plate 10"</a>
-                <a href="#products" data-group="plates" data-sub="pasta-8">Pasta Plate 8"</a>
-              </div>
-            </div>
-
-            <!-- CHAI SETS -->
-            <div class="group-item" data-group="chai-sets" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Chai Sets ▸</button>
-              <div id="submenu-chai" class="sub-menu" role="menu">
-                <a href="#products" data-group="chai-sets" data-sub="kulhad-6">Kulhad Chai Set 6 pcs</a>
-                <a href="#products" data-group="chai-sets" data-sub="kulhad-4">Kulhad Chai Set 4 pcs</a>
-                <a href="#products" data-group="chai-sets" data-sub="kulhad-2">Kulhad Chai Set 2 pcs</a>
-                <a href="#products" data-group="chai-sets" data-sub="tea-glass">Kulhad Tea Glass - Assorted Colour</a>
-              </div>
-            </div>
-
-            <!-- BOWLS -->
-            <div class="group-item" data-group="bowls" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Bowls ▸</button>
-              <div id="submenu-bowls" class="sub-menu" role="menu">
-                <a href="#products" data-group="bowls" data-sub="maggi">Maggi Bowl</a>
-                <a href="#products" data-group="bowls" data-sub="soup">Soup Bowl</a>
-                <a href="#products" data-group="bowls" data-sub="curry-big">Curry Bowl Big</a>
-                <a href="#products" data-group="bowls" data-sub="curry-med">Curry Bowl Medium</a>
-              </div>
-            </div>
-
-            <!-- KITCHEN AESTHETIC -->
-            <div class="group-item" data-group="kitchen" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Kitchen Aesthetic ▸</button>
-              <div id="submenu-kitchen" class="sub-menu" role="menu">
-                <a href="#products" data-group="kitchen" data-sub="oil-dispenser">Oil Dispenser</a>
-                <a href="#products" data-group="kitchen" data-sub="salt-pepper">Salt &amp; Pepper</a>
-                <a href="#products" data-group="kitchen" data-sub="egg-tray">Egg Tray</a>
-                <a href="#products" data-group="kitchen" data-sub="pickle-jar">Pickle Jar Set</a>
-                <a href="#products" data-group="kitchen" data-sub="soap-dispenser">Soap Dispenser Set</a>
-              </div>
-            </div>
-
-            <!-- MUGS & CUPS -->
-            <div class="group-item" data-group="mugs" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Mugs &amp; Cups ▸</button>
-              <div id="submenu-mugs" class="sub-menu" role="menu">
-                <a href="#products" data-group="mugs" data-sub="pinterest-mug">Pinterest Mug</a>
-                <a href="#products" data-group="mugs" data-sub="solid-mug">Solid Mug</a>
-                <a href="#products" data-group="mugs" data-sub="cup-saucer">Cup &amp; Saucer</a>
-              </div>
-            </div>
-
-            <!-- PLANT POTS -->
-            <div class="group-item" data-group="plants" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Plant Pots ▸</button>
-              <div id="submenu-plants" class="sub-menu" role="menu">
-                <a href="#products" data-group="plants" data-sub="small-planter">Small Planter</a>
-                <a href="#products" data-group="plants" data-sub="large-planter">Large Planter</a>
-                <a href="#products" data-group="plants" data-sub="aesthetic-plants">Aesthetic Plant Pots</a>
-              </div>
-            </div>
-
-            <!-- DINNER SET -->
-            <div class="group-item" data-group="dinner-set" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Dinner Set ▸</button>
-              <div id="submenu-dinner" class="sub-menu" role="menu">
-                <a href="#products" data-group="dinner-set" data-sub="premium-porcelain">Premium Porcelain</a>
-                <a href="#products" data-group="dinner-set" data-sub="hand-painted-sets">Hand Painted Sets</a>
-                <a href="#products" data-group="dinner-set" data-sub="dinner-set">Dinner Set</a>
-              </div>
-            </div>
-
-            <!-- TRAYS -->
-            <div class="group-item" data-group="trays" aria-expanded="false">
-              <button class="group-btn" type="button" aria-expanded="false">Trays ▸</button>
-              <div id="submenu-trays" class="sub-menu" role="menu">
-                <a href="#products" data-group="trays" data-sub="unshaped-large">Unshaped Large Tray</a>
-                <a href="#products" data-group="trays" data-sub="biscuit-tray">Biscuit Trays</a>
-                <a href="#products" data-group="trays" data-sub="tea-tray">Tea Trays</a>
-                <a href="#products" data-group="trays" data-sub="leaf-tray">Leaf Tray</a>
-                <a href="#products" data-group="trays" data-sub="oval-tray">Oval Tray</a>
-                <a href="#products" data-group="trays" data-sub="wow-size-trays">Wow Size Trays</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+        <a href="/products">Products</a>
         <a href="#our-story">Our Story</a>
       </nav>
       <a class="logo" href="/">CLAYORA</a>
       <div class="right-icons">
-        <a class="icon-btn" href="https://instagram.com" target="_blank">IG</a>
-        <a class="icon-btn" href="https://facebook.com" target="_blank">FB</a>
+        <!-- Replaced IG & FB -->
+        <a href="/login" class="icon-btn" style="font-weight:600;color:#222;">Customer Login</a>
         <button id="cartBtn" class="icon-btn">🛒</button>
       </div>
     </div>
@@ -300,77 +100,41 @@
   <section class="section">
     <h2>Hot Sellers</h2>
     <div class="grid">
-
-      <article class="card">
-        <div class="media">
-          <img src="./images/ceramic-spice-box.jpg" alt="Ceramic Spice Box">
-        </div>
-        <div class="card-title">Ceramic Spice Box</div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="./images/kulhad-tea-set.jpg" alt="Kulhad Tea Set">
-        </div>
-        <div class="card-title">Kulhad Cutting Chai</div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="./images/hand-painted-jars.jpg" alt="Hand Painted Jars">
-        </div>
-        <div class="card-title">Hand Painted Jars</div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="./images/maggi-bowl.jpg" alt="Maggi Bowl">
-        </div>
-        <div class="card-title">Maggi Bowl</div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="./images/oil-dispenser.jpg" alt="Oil Dispenser">
-        </div>
-        <div class="card-title">Oil Dispenser</div>
-      </article>
-
-      <article class="card">
-        <div class="media">
-          <img src="./images/salt-pepper.jpg" alt="Salt and Pepper">
-        </div>
-        <div class="card-title">Salt &amp; Pepper</div>
-      </article>
-
+      <article class="card"><div class="media"><img src="./images/ceramic-spice-box.jpg"></div><div class="card-title">Ceramic Spice Box</div></article>
+      <article class="card"><div class="media"><img src="./images/kulhad-tea-set.jpg"></div><div class="card-title">Kulhad Cutting Chai</div></article>
+      <article class="card"><div class="media"><img src="./images/hand-painted-jars.jpg"></div><div class="card-title">Hand Painted Jars</div></article>
+      <article class="card"><div class="media"><img src="./images/maggi-bowl.jpg"></div><div class="card-title">Maggi Bowl</div></article>
+      <article class="card"><div class="media"><img src="./images/oil-dispenser.jpg"></div><div class="card-title">Oil Dispenser</div></article>
+      <article class="card"><div class="media"><img src="./images/salt-pepper.jpg"></div><div class="card-title">Salt &amp; Pepper</div></article>
     </div>
   </section>
 
-  <!-- Our Story (inserted) -->
+  <!-- Our Story -->
   <section class="section our-story" id="our-story">
     <h2>Our Story</h2>
     <div class="story-content">
       <div class="story-text">
-        <p>
-          Clayora, a local brand from Trivandrum, Kerala, was born out of a deep love and passion for ceramics — 
-          blending the soul of traditional Indian craftsmanship with the elegance of modern, minimalist design.
-        </p>
-        <p>
-          Our journey began in 2021, when, as a couple, we were setting up our dream home in Trivandrum. Alfa, co-founder of Clayora, realized that aesthetically designed kitchenware like plates, bowls, and jars was missing from the market. She shared this concern with Niyadh, the other co-founder of Clayora.
-        </p>
-        <p>
-          By a twist of fate, one of Niyadh’s close friends — a fellow MBA student from Cardiff, London — came from a Jaipur family renowned for their heritage craft of blue pottery. The family was going through a financial crisis, and the couple extended their support, acquiring major shares in the business. This partnership opened the doors to unique, handcrafted ceramics that carried generations of artistry.
-        </p>
-        <p>
-          Today, every piece we make — whether a mug, a planter, or a decorative jar — is crafted with care, fired multiple times for strength, and finished to perfection. From our base in Trivandrum, we distribute across India, bringing timeless ceramic artistry to homes, boutiques, and wholesalers alike.
-        </p>
-        <p>
-          At Clayora, we believe that ceramics should feel alive — carrying the warmth of the hands that shaped them. Our goal is simple: to bring aesthetic and functional art into everyday life. From sipping your morning coffee to gifting something meaningful, we want Clayora pieces to be part of your stories and memories.
-        </p>
-      </div>
+        <p>Our Story
 
+Clayora, a local brand from Trivandrum, Kerala, was born out of a deep love and passion for ceramics,blending the soul of traditional Indian craftsmanship with the elegance of modern, minimalist design.
+</p>
+<p>
+
+Our journey began in 2021, when, as a couple, we were setting up our dream home in Trivandrum. Alfa, co-founder of Clayora, realized that aesthetically designed kitchenware like plates, bowls, and jars was missing from the market. She shared this concern with Niyadh, the other co-founder of Clayora.
+</p> 
+<p> 
+
+By a twist of fate, one of Niyadh’s close friends,a fellow MBA student from Cardiff, London,came from a Jaipur family renowned for their heritage craft of blue pottery. The family was going through a financial crisis, and the couple extended their support, acquiring major shares in the business. This partnership opened the doors to unique, handcrafted ceramics that carried generations of artistry.
+</p>
+<p>
+
+Today, every piece we make,whether a mug, a planter, or a decorative jar is crafted with care, fired multiple times for strength, and finished to perfection. From our base in Trivandrum, we distribute across India, bringing timeless ceramic artistry to homes, boutiques, and wholesalers alike.
+</p>
+<p>
+At Clayora, we believe that ceramics should feel alive carrying the warmth of the hands that shaped them. Our goal is simple: to bring aesthetic and functional art into everyday life. From sipping your morning coffee to gifting something meaningful, we want Clayora pieces to be part of your stories and memories.
+</p>
+      </div>
       <div class="story-image">
-        <!-- Make sure images/our-story.jpg exists in the images folder -->
         <img src="./images/our-story.jpg" alt="Clayora artisans at work">
       </div>
     </div>
@@ -385,106 +149,33 @@
       </div>
       <div class="links-col">
         <ul>
-          <li><a href="/hot-sellers">Hot Sellers</a></li>
-          <li><a href="/sustainability">Sustainability</a></li>
-          <li><a href="/gift-sets">Gift Sets</a></li>
+          <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+          <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
         </ul>
-        <ul>
-          <li><a href="/faqs">FAQs</a></li>
-          <li><a href="/shipping">Shipping & Returns</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="contact-col">
-  <p><strong>Connect with us</strong></p>
-
-  <!-- WhatsApp -->
-  <p>💬 <a href="https://chat.whatsapp.com/FMktOEuWula5mZHxyduYx5?mode=ems_copy_t" target="_blank">Chat on WhatsApp</a></p>
-
-  <!-- Phone 1 -->
-  <p>☎️ <a href="tel:+918129710294">+91 81297 10294</a></p>
-  <!-- Phone 2 -->
-  <p>☎️ <a href="tel:+918547260400">+91 85472 60400</a></p>
-
-  <!-- Email -->
-  <p>✉️ <a href="mailto:clayoraceramics@gmail.com">clayoraceramics@gmail.com</a></p>
-
-  <!-- Social links -->
-  <div class="social">
-    <a href="https://www.instagram.com/clayoratheceramicstudio?igsh=MTY3Nmdka2dqdDFleg%3D%3D&utm_source=qr" target="_blank">Instagram</a> |
-    <a href="https://www.facebook.com/share/17Ki9CzfDA/?mibextid=wwXIfr" target="_blank">Facebook</a>
-  </div>
+      </div> <!-- Policies section -->
+<div class="policy-col" style="margin-top:1.2rem;">
+  <p><strong>Policies</strong></p>
+  <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+    <li><a href="/cancellation.html" style="color:var(--cream)">Cancellation & Refund</a></li>
+    <li><a href="/privacy.html" style="color:var(--cream)">Privacy Policy</a></li>
+    <li><a href="/terms.html" style="color:var(--cream)">Terms & Conditions</a></li>
+    <li><a href="/shipping.html" style="color:var(--cream)">Shipping Policy</a></li>
+    <li><a href="/contact.html" style="color:var(--cream)">Contact Us</a></li>
+  </ul>
 </div>
+      <div class="contact-col">
+        <p><strong>Connect with us</strong></p>
+        <p>💬 <a href="https://chat.whatsapp.com/FMktOEuWula5mZHxyduYx5" target="_blank">Chat on WhatsApp</a></p>
+        <p>☎️ <a href="tel:+918129710294">+91 81297 10294</a></p>
+        <p>✉️ <a href="mailto:clayoraceramics@gmail.com">clayoraceramics@gmail.com</a></p>
+      </div>
     </div>
     <div class="footer-bottom">© <span id="year"></span> Clayora. All rights reserved.</div>
   </footer>
 
-  <!-- Bottom nav (mobile) -->
-  <nav class="bottom-nav">
-    <a href="/">Home</a>
-    <a href="/products">Products</a>
-    <a href="#our-story">Our Story</a>
-    <a href="/contact">Contact</a>
-  </nav>
-
-  <script src="script.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Dropdown behavior script: toggle main menu, expand/collapse submenus, close on outside click/Escape
-    (function(){
-      const dropdown = document.getElementById('productsDropdown');
-      const toggle = document.getElementById('productsToggle');
-      const menu = document.getElementById('productsMenu');
-      const groupBtns = menu.querySelectorAll('.group-btn');
-      const groupItems = menu.querySelectorAll('.group-item');
-
-      // toggle dropdown open/close
-      toggle.addEventListener('click', function(e){
-        e.stopPropagation();
-        const open = dropdown.getAttribute('aria-expanded') === 'true';
-        dropdown.setAttribute('aria-expanded', open ? 'false' : 'true');
-        toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
-      });
-
-      // toggle each group to show sub-items
-      groupBtns.forEach(btn => {
-        btn.addEventListener('click', function(e){
-          e.stopPropagation();
-          const groupItem = btn.closest('.group-item');
-          const expanded = groupItem.getAttribute('aria-expanded') === 'true';
-          // toggle this group (others left as-is)
-          groupItem.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-          btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        });
-
-        // keyboard accessibility: Enter and Space toggle
-        btn.addEventListener('keydown', function(e){
-          if(e.key === 'Enter' || e.key === ' '){
-            e.preventDefault();
-            btn.click();
-          }
-        });
-      });
-
-      // close when clicking outside the dropdown
-      document.addEventListener('click', function(e){
-        if(!dropdown.contains(e.target)){
-          dropdown.setAttribute('aria-expanded','false');
-          toggle.setAttribute('aria-expanded','false');
-          groupItems.forEach(gi => gi.setAttribute('aria-expanded','false'));
-        }
-      });
-
-      // close on Escape
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape'){
-          dropdown.setAttribute('aria-expanded','false');
-          toggle.setAttribute('aria-expanded','false');
-          groupItems.forEach(gi => gi.setAttribute('aria-expanded','false'));
-        }
-      });
-    })();
   </script>
 </body>
 </html>
