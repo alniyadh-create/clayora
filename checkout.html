@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Clayora — Checkout</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .btn {
+      background: #d4af37;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #b28f2b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cart — Clayora</h1>
+  <div id="cart">
+    <div>Hand-painted Mug — ₹499 <button onclick="addToCart(499)">Add</button></div>
+    <div>Tea Set — ₹1299 <button onclick="addToCart(1299)">Add</button></div>
+  </div>
+
+  <hr>
+  <h3>Your Cart</h3>
+  <div id="cartList">No items yet</div>
+  <br>
+  <button class="btn" onclick="checkout()">Pay Now</button>
+
+  <script>
+    const cart = [];
+    function addToCart(price) {
+      cart.push({ price });
+      renderCart();
+    }
+    function renderCart() {
+      const el = document.getElementById("cartList");
+      if (!cart.length) { el.innerHTML = "No items yet"; return; }
+      let total = 0;
+      const rows = cart.map((it, i) => {
+        total += it.price;
+        return `<div>Item ${i+1} — ₹${it.price}</div>`;
+      }).join("");
+      el.innerHTML = rows + `<br><strong>Total: ₹${total}</strong>`;
+    }
+
+    async function checkout() {
+      if (!cart.length) { alert("Cart empty"); return; }
+      const total = cart.reduce((s, i) => s + i.price, 0);
+
+      // call serverless function
+      const res = await fetch("/.netlify/functions/createOrder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: total, currency: "INR" })
+      });
+
+      const data = await res.json();
+      const order = data.order;
+
+      const options = {
+        key: data.key_id,
+        amount: order.amount,
+        currency: order.currency,
+        name: "Clayora",
+        description: "Clayora Ceramics",
+        order_id: order.id,
+        handler: async function (response) {
+          const verifyRes = await fetch("/.netlify/functions/verifyPayment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(response)
+          });
+          const verifyJson = await verifyRes.json();
+          if (verifyJson.ok) {
+            alert("Payment successful! Thank you 🎉");
+          } else {
+            alert("Payment verification failed ❌");
+          }
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+</body>
+</html>
